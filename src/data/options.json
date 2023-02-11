@@ -1,0 +1,45 @@
+{
+    "Case": [
+        {
+            "url": "https://kbdfans.com/collections/tofu65/products/tofu65-2-0?variant=41179795259531",
+            "name": "Tofu 65 2.0",
+            "price": 188.00
+        },
+        {
+            "url": "https://epomaker.com/collections/65-diy-keyboard-kit-case-pbc/products/epomaker-th66-kit?variant=39877230329929",
+            "name": "EPOMAKER TH66 Pro Kit",
+            "price": 55.99
+        },
+        {
+            "url": "https://epomaker.com/collections/65-diy-keyboard-kit-case-pbc/products/gk68xs-kit?variant=31744262406217",
+            "name": "Aluminum GK68X/GK68XS Kit",
+            "price": 169.99
+        }
+    ],
+    "Switches": [
+        {
+            "url": "https://kprepublic.com/products/everglide-eg-aqua-king-water-king-linear-switch-4pin-5pin-rgb-55g-62g-67g-force-mx-switch-for-mechanical-keyboard-50m-clear-body?variant=39411711049891",
+            "name": "Aqua King v3",
+            "price": 70.99
+        }
+    ],
+    "Stabilizers": [
+        {
+            "url": "https://divinikey.com/collections/keyboard-stabilizers/products/durock-v2-stabilizers-screw-in?variant=32275866583105",
+            "name": "Durock Stabilizers V2",
+            "price": 4.00
+        }
+    ],
+    "Keycaps": [
+        {
+            "url": "https://diykeycap.com/collections/keyboard-accessories/products/gb-mewtwo-keycaps?variant=43707244773597",
+            "name": "Mewtwo Keycaps",
+            "price": 48.98
+        },
+        {
+            "url": "https://esckeyboard.com/products/pom-jelly-keycaps-rainbow-full-kit",
+            "name": "POM Jelly",
+            "price": 69.13
+        }
+    ]
+}

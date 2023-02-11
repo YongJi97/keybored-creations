@@ -1,6 +1,8 @@
 .body {
   display: flex;
   height: 100vh;
+  min-height: 100%;
+  overflow: auto;
 }
 
 .dropdown-container {
@@ -13,6 +15,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  overflow: auto;
 }
 
 .right-side-container {

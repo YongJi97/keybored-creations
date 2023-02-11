@@ -7,6 +7,7 @@ const DropdownList = ({ options, title, onOptionSelected }) => {
   const [selectedPrice, setSelectedPrice] = useState("");
   const [customUrl, setCustomUrl] = useState("");
   const [customPrice, setCustomPrice] = useState("");
+  const [customName, setCustomName] = useState("");
   const [addClicked, setAddClicked] = useState(false);
 
   const handleChange = (event) => {
@@ -26,12 +27,13 @@ const DropdownList = ({ options, title, onOptionSelected }) => {
   };
 
   const handleAddOption = () => {
-    options.push({ url: customUrl, name: customUrl, price: customPrice });
-    console.log(options)
-    setSelectedOption("Add your own");
-    onOptionSelected({ url: customUrl, name: "Add your own", price: customPrice });
-    setCustomUrl(customUrl);
-    setCustomPrice(customPrice);
+    const customOpt = { url: customUrl, name: customName, price: customPrice };
+    options.push(customOpt);
+    // console.log(options)
+    // setSelectedOption(customOpt);
+    // onOptionSelected(customOpt);
+    // setCustomUrl(customUrl);
+    // setCustomPrice(customPrice);
     setAddClicked(true);
   };
 
@@ -48,7 +50,7 @@ const DropdownList = ({ options, title, onOptionSelected }) => {
         >
           {options.map((option) => (
             <MenuItem key={option.name} value={option.name}>
-              {option.name} ({option.price}$)
+              {option.name} (${option.price})
             </MenuItem>
           ))}
           <MenuItem key="add-your-own" value="Add your own">
@@ -57,12 +59,17 @@ const DropdownList = ({ options, title, onOptionSelected }) => {
         </Select>
       </FormControl>
       {selectedOption !== "" && (
-        <div style={{ display: "flex", marginTop: 20 }}>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           {selectedOption === "Add your own" ? (
             <div style={{ display: "flex", flexDirection: "column" }}>
               <>
               {!addClicked ? (
                 <div>
+              <TextField
+                label="Name"
+                value={customName}
+                onChange={(event) => setCustomName(event.target.value)}
+              />
               <TextField
                 label="URL"
                 value={customUrl}
@@ -83,7 +90,10 @@ const DropdownList = ({ options, title, onOptionSelected }) => {
               </>
               <>
                 <p style={{ marginRight: 20 }}>
-                  URL: {customUrl || "Enter a URL"}
+                  Name: {customName || "Enter a name for your item"}
+                </p>
+                <p style={{ marginRight: 20 }}>
+                  URL: <a href={customUrl || "Enter a URL"} target="_blank">Click here</a>
                 </p>
                 <p>
                   Price: {customPrice || "Enter a price"}
@@ -92,8 +102,8 @@ const DropdownList = ({ options, title, onOptionSelected }) => {
             </div>
           ) : (
             <>
-              <p style={{ marginRight: 20 }}>
-                URL: {selectedUrl}
+              <p style={{ flexDirection: "column" }}>
+                URL: <a href={selectedUrl} target="_blank">Click here</a>
               </p>
               <p>
                 Price: {selectedPrice}

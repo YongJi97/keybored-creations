@@ -8,15 +8,12 @@ const App = () => {
 
   const parts = ["Case", "Switches", "Stabilizers", "Keycaps"];
 
-  const options = [
-    { url: "https://option1", name: "Option 1", price: 10 },
-    { url: "https://option2", name: "Option 2", price: 20 },
-    { url: "https://option3", name: "Option 3", price: 30 },
-    { url: "https://option4", name: "Option 4", price: 40 },
-  ];
+  const options = require('./data/options.json');
+  const caseOpts = options.Case;
+  const switchOpts = options.Switches;
+  const stabsOpts = options.Stabilizers;
+  const keycapsOpts = options.Keycaps;
   
-  const value = options[0].name;
-
   const [totalPrice, setTotalPrice] = useState(0);
 
   const handleOptionSelected = (optionObj) => {
@@ -34,17 +31,17 @@ const App = () => {
     <div className="body">
       <Header />
       <div className="dropdown-container">
-      <DropdownList title="Case" options={options} value={value} onOptionSelected={handleOptionSelected} />
-      <DropdownList title="Switches" options={options} value={value} onOptionSelected={handleOptionSelected} />
-      <DropdownList title="Stabilizers" options={options} value={value} onOptionSelected={handleOptionSelected} />
-      <DropdownList title="Keycaps" options={options} value={value} onOptionSelected={handleOptionSelected} />
+      <DropdownList title="Case" options={caseOpts} value={caseOpts[0].name} onOptionSelected={handleOptionSelected} />
+      <DropdownList title="Switches" options={switchOpts} value={switchOpts[0].name} onOptionSelected={handleOptionSelected} />
+      <DropdownList title="Stabilizers" options={stabsOpts} value={stabsOpts[0].name} onOptionSelected={handleOptionSelected} />
+      <DropdownList title="Keycaps" options={keycapsOpts} value={keycapsOpts[0].name} onOptionSelected={handleOptionSelected} />
 
 
       </div>
       <div className="right-side-container">
       {/* <DisplayOption selectedOption={selectedOption} /> */}
 
-      <div>Total Price: {totalPrice}$</div>
+      <div>Total Price: ${totalPrice.toFixed(2)}</div>
       </div>
     </div>
   );
